@@ -1,0 +1,31 @@
+{
+    "translations": {
+        "de": {
+            "Share Data Configurator": "Datenaustauch Konfigurator",
+            "A lightweight module for sharing variables and media between two (or more) Symcon systems via MQTT.": "Ein leichtgewichtiges Modul zum Teilen von Variablen und Medien zwischen zwei (oder mehr) Symcon Systemen über MQTT.",
+            "🔗 Connection ...": "🔗 Verbindung ...",
+            "This module must be connected to an MQTT Client or MQTT Server parent instance.": "Dieses Modul muss mit einer MQTT Client- oder MQTT Server-Instanz verbunden sein.",
+            "Topic prefix:": "Topic-Präfix:",
+            "Publish all objects on startup?": "Alle Objekte beim Start publizieren?",
+            "📊 Variables ...": "📊 Variablen ...",
+            "Variables to share:": "Variablen, die geteilt werden sollen:",
+            "Variable": "Variable",
+            "MQTT sub-topic (without prefix)": "MQTT Sub-Topic (ohne Präfix)",
+            "Direction": "Richtung",
+            "Publish (local → MQTT)": "Publish (lokal → MQTT)",
+            "Subscribe (MQTT → local)": "Subscribe (MQTT → lokal)",
+            "Publish + Subscribe (↔)": "Publish + Subscribe (↔)",
+            "Sync on update": "Bei Aktualisierung synchronisieren",
+            "🖼️ Media ...": "🖼️ Medien ...",
+            "Media objects to share. Content is transferred as a hex-encoded binary string:": "Medienobjekte, die geteilt werden sollen. Der Inhalt wird als Hex-kodierter Binärstring übertragen:",
+            "Media object": "Medienobjekt",
+            "⚙️ Advanced settings ...": "⚙️ Erweiterte Einstellungen ...",
+            "Publish all objects now": "Alle Objekte jetzt publizieren",
+            "🚀 Execute action ...": "🚀 Aktion ausführen ...",
+            "Active": "Aktiv",
+            "Not connected": "Nicht verbunden",
+            "🎗️ Source code, donation and licence ...": "🎗️ Quellcode, Spende und Lizenz ...",
+            "The software is free of charge for non-commercial use, I would appreciate a donation if you like the module.": "Die Software ist für die nicht kommerzielle Nutzung kostenlos, über eine Spende bei Gefallen des Moduls würde ich mich sehr freuen."
+        }
+    }
+}

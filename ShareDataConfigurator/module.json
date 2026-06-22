@@ -1,0 +1,16 @@
+{
+    "id": "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}",
+    "name": "Share Data Configurator",
+    "url": "https://wilkware.de/ip-symcon-module/austausch/",
+    "type": 4,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"
+    ],
+    "prefix": "WWXSDC"
+}
