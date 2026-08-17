@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
 [![Product](https://img.shields.io/badge/Symcon%20Version-8.1-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.0.20260614-orange.svg?style=flat-square)](https://github.com/Wilkware/ColorLoop)
+[![Version](https://img.shields.io/badge/Modul%20Version-1.1.20260817-orange.svg?style=flat-square)](https://github.com/Wilkware/ColorLoop)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Actions](https://img.shields.io/github/actions/workflow/status/wilkware/ShareData/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/Wilkware/ShareData/actions)
 
@@ -124,6 +124,12 @@ Das Modul stellt keine direkten Funktionsaufrufe zur Verfügung.
 v1.0.20260614
 
 * _NEU_: Initialversion
+
+v1.1.20260817
+
+* _NEU_: Syncronisierung nach Systemstart verbessert
+* _NEU_: Namespaces für Bibliotheken eingeführt
+* _FIX_: Instanz-Status wird jetzt korrekt gesetzt
 
 ## Entwickler
 

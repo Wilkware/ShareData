@@ -2,8 +2,13 @@
 
 declare(strict_types=1);
 
-// General functions
+/** General functions  */
 require_once __DIR__ . '/../libs/_traits.php';
+
+/** Namespaced traits */
+use Wilkware\ShareData\DebugHelper;
+use Wilkware\ShareData\FormatHelper;
+use Wilkware\ShareData\VariableHelper;
 
 /**
  * class ShareDataConfigurator
@@ -23,6 +28,10 @@ require_once __DIR__ . '/../libs/_traits.php';
  */
 class ShareDataConfigurator extends IPSModuleStrict
 {
+    // -------------------------------------------------------------------------
+    // Traits
+    // -------------------------------------------------------------------------
+
     use DebugHelper;
     use FormatHelper;
     use VariableHelper;
@@ -49,6 +58,9 @@ class ShareDataConfigurator extends IPSModuleStrict
 
     /** Direction constant: bidirectional. */
     private const SHARE_DIR_BOTH = 'publish+subscribe';
+
+    /** Startup publish delay time */
+    private const SHARE_STARTUP_DELAY = 30000;
 
     // -------------------------------------------------------------------------
     // Ping-pong guard
@@ -116,6 +128,11 @@ class ShareDataConfigurator extends IPSModuleStrict
 
         /** Persists the list of currently subscribed full topics. */
         $this->RegisterAttributeString('SubscribedTopics', '[]');
+
+        // --- Timer -----------------------------------------------------------
+
+        /** Start-up delay timer */
+        $this->RegisterTimer('StartupPublish', 0, 'IPS_RequestAction(' . $this->InstanceID . ', "publish", "");');
     }
 
     /**
@@ -173,6 +190,7 @@ class ShareDataConfigurator extends IPSModuleStrict
         if ($this->ReadPropertyBoolean('PublishOnConnect')) {
             $this->PublishAllObjects();
         }
+        $this->SetStatus(102);
     }
 
     /**
@@ -219,7 +237,8 @@ class ShareDataConfigurator extends IPSModuleStrict
                 if ($data[0] === KR_READY) {
                     $this->UpdateRegistrations();
                     $this->UpdateMQTTSubscriptions();
-                    $this->PublishAllObjects();
+
+                    $this->SetTimerInterval('StartupPublish', self::SHARE_STARTUP_DELAY);
                 }
                 break;
 
@@ -540,6 +559,7 @@ class ShareDataConfigurator extends IPSModuleStrict
      */
     private function PublishAllObjects(): void
     {
+        $this->SetTimerInterval('StartupPublish', 0);
         $prefix = $this->ReadPropertyString('TopicPrefix');
         $variables = json_decode($this->ReadPropertyString('Variables'), true);
         $media = json_decode($this->ReadPropertyString('Media'), true);
