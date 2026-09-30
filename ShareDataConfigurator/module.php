@@ -171,7 +171,8 @@ class ShareDataConfigurator extends IPSModuleStrict
         $modul = IPS_GetModule($instance['ModuleInfo']['ModuleID']);
         $library = IPS_GetLibrary($modul['LibraryID']);
         $version = sprintf('v%s.%d', $library['Version'], $library['Build']);
-        $this->ModifyFormElement($form['actions'], 'Version', function (array &$element) use ($version): void {
+        $this->ModifyFormElement($form['actions'], 'Version', function (array &$element) use ($version): void
+        {
             $element['caption'] = $version;
         });
 
