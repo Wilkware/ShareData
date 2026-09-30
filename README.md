@@ -1,14 +1,14 @@
-# 🖇️ Datenaustauch (Share Data)
+# 🖇️ Datenaustausch (Share Data)
 
 [![Version](https://img.shields.io/badge/Symcon-PHP--Modul-red.svg?style=flat-square)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
 [![Product](https://img.shields.io/badge/Symcon%20Version-8.1-blue.svg?style=flat-square)](https://www.symcon.de/produkt/)
-[![Version](https://img.shields.io/badge/Modul%20Version-1.1.20260817-orange.svg?style=flat-square)](https://github.com/Wilkware/ColorLoop)
+[![Version](https://img.shields.io/badge/Modul%20Version-2.0.20260929-orange.svg?style=flat-square)](https://github.com/Wilkware/ShareData)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Actions](https://img.shields.io/github/actions/workflow/status/wilkware/ShareData/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/Wilkware/ShareData/actions)
 
 Leichtgewichtiges Modul zum Teilen von Variablen und Medien zwischen zwei (oder mehr) IP-Symcon Systemen über MQTT.
 
-## Inhaltverzeichnis
+## Inhaltsverzeichnis
 
 1. [Funktionsumfang](#user-content-1-funktionsumfang)
 2. [Voraussetzungen](#user-content-2-voraussetzungen)
@@ -49,9 +49,13 @@ Keine Aktion verknüpft        | `SetValue()` – direktes Schreiben
 
 #### Hinweise
 
+- Die übergeordnete MQTT Client-Instanz muss die geteilten Topics abonniert haben (Standard `#`, alternativ mindestens `<Präfix>#`, z. B. `symcon/share/#`). Das Modul selbst abonniert keine Topics.
+- Ist der MQTT Client nicht verbunden, zeigt die Instanz den Status _Nicht verbunden_. Nach dem Wiederverbinden werden alle Objekte erneut publiziert (sofern _Alle Objekte beim Start publizieren?_ aktiv ist).
 - Alle Topics nutzen `Retain = true` → der Empfänger bekommt den letzten Wert sofort nach Connect
-- Das Modul registriert Variablen dynamisch im `MessageSink` – keine Kernelrestart nötig nach Konfigurationsänderung
-- Es erfolgt keine Prüfung der Objektkombatibilität, d.h. kein Test ob die zu synchronisierenden Variablen vom gleichen Typ sind!
+- Das Modul registriert Variablen dynamisch im `MessageSink` – kein Kernel-Neustart nötig nach Konfigurationsänderung
+- Es erfolgt keine Prüfung der Objektkompatibilität, d.h. kein Test ob die zu synchronisierenden Variablen vom gleichen Typ sind!
+- Medieninhalte werden Base64-kodiert übertragen (ab v2.0, nicht kompatibel zu älteren Versionen – alle beteiligten Systeme gleichzeitig aktualisieren!)
+- Ping-Pong-Schutz: Wird ein Objekt über MQTT geschrieben, wird genau die eine Aktualisierung mit diesem Wert nicht erneut publiziert; lokale Änderungen auf einen anderen Wert werden immer sofort gesendet. Das eigene Echo des Brokers wird einmalig verworfen.
 
 ### 2. Voraussetzungen
 
@@ -121,15 +125,26 @@ Das Modul stellt keine direkten Funktionsaufrufe zur Verfügung.
 
 ### 8. Versionshistorie
 
-v1.0.20260614
+v2.0.20260929
 
-* _NEU_: Initialversion
+* _NEU_: Medien werden jetzt Base64-kodiert übertragen (nicht kompatibel zu v1.x – alle Systeme gleichzeitig aktualisieren!)
+* _NEU_: Instanz-Status zeigt die Verbindung zum MQTT Client, nach dem Wiederverbinden wird automatisch neu publiziert
+* _NEU_: Warnung bei leeren oder doppelten Topics
+* _NEU_: Neue Einträge starten mit Richtung _Publish_, Medienauswahl zeigt nur Medienobjekte
+* _FIX_: Rückkopplungsschleifen bei bidirektionalen Einträgen behoben
+* _FIX_: Option _Alle Objekte beim Start publizieren?_ wird beim Systemstart beachtet
+* _FIX_: Genauigkeit von Float-Werten und Fehlerbehandlung beim Empfang verbessert
+* _FIX_: Diverse Text- und Übersetzungsfehler korrigiert
 
 v1.1.20260817
 
-* _NEU_: Syncronisierung nach Systemstart verbessert
+* _NEU_: Synchronisierung nach Systemstart verbessert
 * _NEU_: Namespaces für Bibliotheken eingeführt
 * _FIX_: Instanz-Status wird jetzt korrekt gesetzt
+
+v1.0.20260614
+
+* _NEU_: Initialversion
 
 ## Entwickler
 

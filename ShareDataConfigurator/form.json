@@ -81,7 +81,7 @@
                             "caption": "Direction",
                             "name": "Direction",
                             "width": "220px",
-                            "add": "publish+subscribe",
+                            "add": "publish",
                             "edit": {
                                 "type": "Select",
                                 "options": [
@@ -121,7 +121,7 @@
                 {
                     "type": "List",
                     "name": "Media",
-                    "caption": "Media objects to share. Content is transferred as a hex-encoded binary string:",
+                    "caption": "Media objects to share. Content is transferred Base64-encoded:",
                     "rowCount": 4,
                     "add": true,
                     "delete": true,
@@ -136,7 +136,7 @@
                             "width": "auto",
                             "add": 0,
                             "edit": {
-                                "type": "SelectObject"
+                                "type": "SelectMedia"
                             }
                         },
                         {
@@ -153,7 +153,7 @@
                             "caption": "Direction",
                             "name": "Direction",
                             "width": "448px",
-                            "add": "publish+subscribe",
+                            "add": "publish",
                             "edit": {
                                 "type": "Select",
                                 "options": [
@@ -237,6 +237,7 @@
                 },
                 {
                     "type": "Label",
+                    "name": "Version",
                     "color": 8421504
                 }
             ]

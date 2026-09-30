@@ -1,7 +1,7 @@
 {
     "translations": {
         "de": {
-            "Share Data Configurator": "Datenaustauch Konfigurator",
+            "Share Data Configurator": "Datenaustausch Konfigurator",
             "A lightweight module for sharing variables and media between two (or more) Symcon systems via MQTT.": "Ein leichtgewichtiges Modul zum Teilen von Variablen und Medien zwischen zwei (oder mehr) Symcon Systemen über MQTT.",
             "🔗 Connection ...": "🔗 Verbindung ...",
             "This module must be connected to an MQTT Client or MQTT Server parent instance.": "Dieses Modul muss mit einer MQTT Client- oder MQTT Server-Instanz verbunden sein.",
@@ -17,7 +17,7 @@
             "Publish + Subscribe (↔)": "Publish + Subscribe (↔)",
             "Sync on update": "Bei Aktualisierung synchronisieren",
             "🖼️ Media ...": "🖼️ Medien ...",
-            "Media objects to share. Content is transferred as a hex-encoded binary string:": "Medienobjekte, die geteilt werden sollen. Der Inhalt wird als Hex-kodierter Binärstring übertragen:",
+            "Media objects to share. Content is transferred Base64-encoded:": "Medienobjekte, die geteilt werden sollen. Der Inhalt wird Base64-kodiert übertragen:",
             "Media object": "Medienobjekt",
             "⚙️ Advanced settings ...": "⚙️ Erweiterte Einstellungen ...",
             "Publish all objects now": "Alle Objekte jetzt publizieren",
