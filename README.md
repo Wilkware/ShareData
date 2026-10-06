@@ -6,18 +6,19 @@
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Actions](https://img.shields.io/github/actions/workflow/status/wilkware/ShareData/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/Wilkware/ShareData/actions)
 
-Leichtgewichtiges Modul zum Teilen von Variablen und Medien zwischen zwei (oder mehr) IP-Symcon Systemen über MQTT.
+Leichtgewichtiges Modul zum Teilen von Variablen und Medien zwischen zwei (oder mehr) Symcon Systemen über MQTT.
 
 ## Inhaltsverzeichnis
 
 1. [Funktionsumfang](#user-content-1-funktionsumfang)
 2. [Voraussetzungen](#user-content-2-voraussetzungen)
 3. [Installation](#user-content-3-installation)
-4. [Einrichten der Instanzen in Symcon](#user-content-4-einrichten-der-instanzen-in-symcon)
-5. [Statusvariablen und Darstellungen](#user-content-5-statusvariablen-und-darstellungen)
-6. [Visualisierung](#user-content-6-visualisierung)
-7. [PHP-Befehlsreferenz](#user-content-7-php-befehlsreferenz)
-8. [Versionshistorie](#user-content-8-versionshistorie)
+4. [Einrichtung](#user-content-4-einrichtung)
+5. [Statusvariablen](#user-content-5-statusvariablen)
+6. [Darstellungen](#user-content-6-darstellungen)
+7. [Visualisierung](#user-content-7-visualisierung)
+8. [Befehlsreferenz](#user-content-8-befehlsreferenz)
+9. [Versionshistorie](#user-content-9-versionshistorie)
 
 ### 1. Funktionsumfang
 
@@ -59,16 +60,18 @@ Keine Aktion verknüpft        | `SetValue()` – direktes Schreiben
 
 ### 2. Voraussetzungen
 
-* IP-Symcon ab Version 8.1
+* Symcon ab Version 8.1
 * Getestet mit verschiedenen Variablen und Bildern < 100kb
 
 ### 3. Installation
 
 * Über den Modul Store das Modul _Datenaustausch Konfigurator_ installieren.
-* Alternativ Über das Modul-Control folgende URL hinzufügen.  
+* Alternativ über das Modul Control folgende URL hinzufügen.  
 `https://github.com/Wilkware/ShareData` oder `git://github.com/Wilkware/ShareData.git`
 
-### 4. Einrichten der Instanzen in Symcon
+### 4. Einrichtung
+
+* Unter 'Instanz hinzufügen' ist das _Datenaustausch Konfigurator_-Modul unter dem Hersteller '(Konfigurator)' aufgeführt.
 
 __Konfigurationsseite__:
 
@@ -111,19 +114,23 @@ Aktion                              | Beschreibung
 ----------------------------------- | -----------------------------------------------------------------
 ALLE OBJEKTE JETZT PUBLIZIEREN      | Löst eine Momentaufnahme(Snapshot) aus.
 
-### 5. Statusvariablen und Darstellungen
+### 5. Statusvariablen
 
-Es werden keine zusätzlichen Statusvariablen/Darstellungen benötigt.
+Es werden keine Statusvariablen angelegt.
 
-### 6. Visualisierung
+### 6. Darstellungen
+
+Es werden keine Darstellungen oder Profile benötigt.
+
+### 7. Visualisierung
 
 Es ist keine weitere Steuerung oder gesonderte Darstellung integriert.
 
-### 7. PHP-Befehlsreferenz
+### 8. Befehlsreferenz
 
 Das Modul stellt keine direkten Funktionsaufrufe zur Verfügung.
 
-### 8. Versionshistorie
+### 9. Versionshistorie
 
 v2.0.20260929
 
@@ -148,7 +155,7 @@ v1.0.20260614
 
 ## Entwickler
 
-Seit nunmehr über 10 Jahren fasziniert mich das Thema Haussteuerung. In den letzten Jahren betätige ich mich auch intensiv in der IP-Symcon Community und steuere dort verschiedenste Skript und Module bei. Ihr findet mich dort unter dem Namen @pitti ;-)
+Seit nunmehr über 10 Jahren fasziniert mich das Thema Haussteuerung. In den letzten Jahren betätige ich mich auch intensiv in der Symcon Community und steuere dort verschiedenste Skript und Module bei. Ihr findet mich dort unter dem Namen @pitti ;-)
 
 [![GitHub](https://img.shields.io/badge/GitHub-@wilkware-181717.svg?style=for-the-badge&logo=github)](https://wilkware.github.io/)
 

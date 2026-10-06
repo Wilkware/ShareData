@@ -13,7 +13,7 @@ use Wilkware\ShareData\FormHelper;
 /**
  * class ShareDataConfigurator
  *
- * Shares variables and media objects between two or more IP-Symcon instances
+ * Shares variables and media objects between two or more Symcon instances
  * via MQTT. A single variable list with an explicit direction controls
  * whether each entry publishes, subscribes, or does both.
  *
@@ -96,7 +96,7 @@ class ShareDataConfigurator extends IPSModuleStrict
     // -------------------------------------------------------------------------
 
     /**
-     * In contrast to Construct, this function is called only once when creating the instance and starting IP-Symcon.
+     * In contrast to Construct, this function is called only once when creating the instance and starting Symcon.
      * Therefore, status variables and module properties which the module requires permanently should be created here.
      *
      * @return void
@@ -145,7 +145,7 @@ class ShareDataConfigurator extends IPSModuleStrict
 
     /**
      * This function is called when deleting the instance during operation and when updating via "Module Control".
-     * The function is not called when exiting IP-Symcon.
+     * The function is not called when exiting Symcon.
      *
      * @return void
      */
@@ -307,7 +307,7 @@ class ShareDataConfigurator extends IPSModuleStrict
     }
 
     /**
-     * This function is called by IP-Symcon and processes sent data and, if necessary, forwards it to
+     * This function is called by Symcon and processes sent data and, if necessary, forwards it to
      * all child instances. Data can be sent using the SendDataToChildren function.
      *
      * @param string $json Data package in JSON format
