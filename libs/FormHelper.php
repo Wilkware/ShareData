@@ -3,7 +3,7 @@
 /**
  * FormHelper.php
  *
- * Part of the Trait-Libraray for Symcon Modules.
+ * Part of the Trait-Library for Symcon Modules.
  *
  * @package       traits
  * @author        Heiko Wilknitz <heiko@wilkware.de>
