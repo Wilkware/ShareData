@@ -105,7 +105,7 @@ class ShareDataConfigurator extends IPSModuleStrict
     {
         parent::Create();
 
-        if ((float) IPS_GetKernelVersion() < 8.2) {
+        if ((float) IPS_GetKernelVersion() < 8.2 && method_exists($this, 'ConnectParent')) {
             $this->ConnectParent(self::GUID_MQTT_IO);
         }
 
